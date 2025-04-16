@@ -71,8 +71,7 @@ def enviar_pedido():
         lista_itens.delete(0, tk.END)
 
     except Exception as e:
-        messagebox.showerror("Erro", str(e))
-
+        messagebox.showerror("Erro","Erro ao salvar o pedido, verifique as informações antes de prosseguir")
 def gerar_detalhe_pedido():
     try:
         pedido_id = int(entry_pedido_id.get())
@@ -90,7 +89,7 @@ def gerar_ranking():
 
 app = tk.Tk()
 app.title("Sistema de Pedidos")
-app.geometry("720x1000")
+app.geometry("700x900")
 
 # Campos do pedido
 tk.Label(app, text="ID do Cliente").grid(row=0, column=0, sticky='e', padx=10, pady=5)
