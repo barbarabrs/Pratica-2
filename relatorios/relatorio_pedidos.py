@@ -4,6 +4,7 @@ from db.conexao import conectar
 def detalhar_pedido(order_id):
     with conectar() as conn:
         with conn.cursor() as cur:
+            cur.execute("SET CLIENT_ENCODING TO 'UTF8'")
             # Info geral do pedido
             cur.execute("""
                 SELECT 
