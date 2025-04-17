@@ -1,6 +1,7 @@
 import tkinter as tk
 from tkinter import messagebox
 from controller.pedido_controller import criar_pedido
+from controller.pedido_controller_orm import criar_pedido_orm
 from relatorios.relatorio_pedidos import detalhar_pedido
 from relatorios.relatorio_funcionarios import ranking_funcionarios
 import io
