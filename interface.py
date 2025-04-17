@@ -59,8 +59,11 @@ def enviar_pedido():
 
         if not itens_processados:
             raise ValueError("Adicione pelo menos um item ao pedido.")
-
-        criar_pedido(customer_id, employee_id, itens_processados)
+        
+        if pode_injetar:
+            criar_pedido(customer_id, employee_id, itens_processados)
+        else:
+            criar_pedido_orm(customer_id, employee_id, itens_processados)
 
         texto_resultado.config(state='normal')
         texto_resultado.delete(1.0, tk.END)
